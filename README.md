@@ -62,6 +62,10 @@ names(ames)
     ## [13] "LotArea(sf)"           "AC"                    "FirePlace"            
     ## [16] "Neighborhood"
 
+``` r
+# summary(ames)
+```
+
 - There are 16 variables. These include Parcel ID, Address, Style,
   Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
   TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
