@@ -52,7 +52,7 @@ ggplot(ames, aes(x = `Sale Price`)) + geom_histogram(binwidth = 100000)
 ```{r}
 DeoShajiPlot <- ggplot(ames, 
                        aes(x = Acres, y = `Sale Price`)) +
-  scale_y_log10() + 
+ scale_y_continuous(trans = "log", labels = scales::comma) +
   scale_x_log10() +
   geom_jitter()
   
