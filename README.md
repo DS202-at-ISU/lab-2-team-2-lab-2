@@ -107,14 +107,15 @@ ggplot(ames, aes(x = `Sale Price`)) + geom_histogram(binwidth = 100000)
 ``` r
 DeoShajiPlot <- ggplot(ames, 
                        aes(x = Acres, y = `Sale Price`)) +
-  scale_y_log10() + 
+ scale_y_continuous(trans = "log", labels = scales::comma) +
   scale_x_log10() +
   geom_jitter()
   
 DeoShajiPlot
 ```
 
-    ## Warning in scale_y_log10(): log-10 transformation introduced infinite values.
+    ## Warning in scale_y_continuous(trans = "log", labels = scales::comma):
+    ## log-2.718282 transformation introduced infinite values.
 
     ## Warning in scale_x_log10(): log-10 transformation introduced infinite values.
 
@@ -189,3 +190,31 @@ ggplot(ames, aes(x=YearBuilt, y=`Sale Price`)) +
   steady based on year built. There are multiple outliers, and the
   positive trend line is very gradual, indicating that year built is
   likely not the best variable to predict sale price.
+
+#### Jacob Bartlett
+
+``` r
+ggplot(data = subset(ames, !is.na(`TotalLivingArea (sf)`)), aes(x = `TotalLivingArea (sf)`)) + geom_histogram(binwidth = 100)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+- The variable I’ll be examing is the TotalLivingArea. The range of this
+  variable is between 0 and 6,007 square feet. The histogram shows that
+  a majority of the houses have a ling area between 1,000 and 2,000
+  square feet. The graph is unimodal and skewed right, and there are
+  some outliers that are past 4,500 square feet.
+
+``` r
+ggplot(data = subset(ames, !is.na(`TotalLivingArea (sf)`)), aes(x = `TotalLivingArea (sf)`, y = log(`Sale Price`))) + geom_point()
+```
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+- The scatterplot shows that the two variables have a slightly positive
+  and linear relationship. This variable doesn’t do a good job of
+  describing the outliers in question 3. There are some oddities with
+  this graph since there are 447 rows that are NA in the variable
+  TotalLivingArea. This causes the values in the same rows in Sale Price
+  to fall to the bottom of the graph which doesn’t help give a full
+  visualization of the two variables.
