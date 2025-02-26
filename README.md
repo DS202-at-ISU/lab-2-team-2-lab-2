@@ -22,15 +22,8 @@ you are done with your submission.
 ``` r
 library(classdata)
 library(ggplot2)
-```
-
-    ## Warning: package 'ggplot2' was built under R version 4.4.2
-
-``` r
 library(dplyr)
 ```
-
-    ## Warning: package 'dplyr' was built under R version 4.4.2
 
     ## 
     ## Attaching package: 'dplyr'
@@ -132,4 +125,56 @@ DeoShajiPlot
 
 - The overall pattern is that the the datat has a slight positive
   correlation. As the square feet of acres increases, sale price also
-  increases. Most of the data is clustered with some outliers.
+  increases. Most of the data is clustered with some outliers with high
+  prices or low prices.
+
+#### Megan Mason
+
+``` r
+new_df <- dfAmes %>% filter(!is.na(Bedrooms)) %>% select("Bedrooms", "Sale Price")
+
+head(new_df)
+```
+
+    ## # A tibble: 6 × 2
+    ##   Bedrooms `Sale Price`
+    ##      <dbl>        <dbl>
+    ## 1        2       181900
+    ## 2        1       127100
+    ## 3        3            0
+    ## 4        4       245000
+    ## 5        4       368000
+    ## 6        5            0
+
+``` r
+ggplot(new_df, aes(x=factor(Bedrooms), y=(`Sale Price`))) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log", labels = scales::comma) +
+  labs(x="Number of Bedrooms", y="Sale Price")
+```
+
+    ## Warning in scale_y_continuous(trans = "log", labels = scales::comma):
+    ## log-2.718282 transformation introduced infinite values.
+
+    ## Warning: Removed 2124 rows containing non-finite outside the scale range
+    ## (`stat_boxplot()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+- (Megan’s Code) We conclude from the boxplots that the mean sale price
+  slowly increases as number of bedrooms increases. The distributions
+  and the means are similar and with the exception of outliers, they
+  have a similar shape. However, for houses with one or no bedrooms, the
+  distribution is much wider, with many of the houses with only one
+  bedroom having high sale prices, but houses with no bedrooms have low
+  sale prices. Neither of these groups have any outliers.
+
+\###Sam Bonner
+
+ggplot(ames, aes(x=YearBuilt, y=`Sale Price`)) + geom_point(alpha =
+0.5) + xlim(1900,2030) + scale_y_log10()
+
+- The plot has a slight positive trend, but overall prices seem to be
+  steady based on year built. There are multiple outliers, and the
+  positive trend line is very gradual, indicating that year built is
+  likely not the best variable to predict sale price.
