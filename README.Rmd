@@ -59,7 +59,6 @@ DeoShajiPlot <- ggplot(ames,
 DeoShajiPlot
 ```
   
-- The overall pattern is that the the datat has a slight positive correlation. As the square feet of acres increases,
-sale price also increases. Most of the data is clustered with some outliers. 
+- The overall pattern is that the the datat has a slight positive correlation. As the square feet of acres increases, sale price also increases. Most of the data is clustered with some outliers with high prices or low prices. 
 
 
