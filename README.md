@@ -22,8 +22,15 @@ you are done with your submission.
 ``` r
 library(classdata)
 library(ggplot2)
+```
+
+    ## Warning: package 'ggplot2' was built under R version 4.4.2
+
+``` r
 library(dplyr)
 ```
+
+    ## Warning: package 'dplyr' was built under R version 4.4.2
 
     ## 
     ## Attaching package: 'dplyr'
@@ -58,7 +65,8 @@ names(ames)
 - There are 16 variables. These include Parcel ID, Address, Style,
   Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
   TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
-  FirePlace, and Neighborhood.
+  FirePlace, and Neighborhood. You can find data on the meaning and
+  range of the variables by running the code.
 
 ## 2. is there a variable of special interest or focus?
 
