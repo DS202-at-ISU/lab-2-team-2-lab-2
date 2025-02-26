@@ -29,8 +29,9 @@ library(dplyr)
 ```{r}
 ?ames
 names(ames)
+summary(ames)
 ```
-- There are 16 variables. These include Parcel ID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC, FirePlace, and Neighborhood.
+- There are 16 variables. These include Parcel ID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC, FirePlace, and Neighborhood. The data on the meaning of each variable and the range of each variable can be found by running the code above.
 
 
 ## 2. is there a variable of special interest or focus?
