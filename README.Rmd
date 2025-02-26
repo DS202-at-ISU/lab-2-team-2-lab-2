@@ -48,4 +48,18 @@ ggplot(ames, aes(x = `Sale Price`)) + geom_histogram(binwidth = 100000)
 
 ## 4. pick a variable that might be related to the main variable.
 
+#### Deo Shaji
+```{r}
+DeoShajiPlot <- ggplot(ames, 
+                       aes(x = Acres, y = `Sale Price`)) +
+  scale_y_log10() + 
+  scale_x_log10() +
+  geom_jitter()
+  
+DeoShajiPlot
+```
+  
+- The overall pattern is that the the datat has a slight positive correlation. As the square feet of acres increases,
+sale price also increases. Most of the data is clustered with some outliers. 
+
 

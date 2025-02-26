@@ -22,8 +22,15 @@ you are done with your submission.
 ``` r
 library(classdata)
 library(ggplot2)
+```
+
+    ## Warning: package 'ggplot2' was built under R version 4.4.2
+
+``` r
 library(dplyr)
 ```
+
+    ## Warning: package 'dplyr' was built under R version 4.4.2
 
     ## 
     ## Attaching package: 'dplyr'
@@ -56,7 +63,6 @@ names(ames)
     ## [16] "Neighborhood"
 
 ``` r
-<<<<<<< HEAD
 dfAmes <- classdata::ames
 head(dfAmes)
 ```
@@ -75,11 +81,6 @@ head(dfAmes)
     ## #   `FinishedBsmtArea (sf)` <dbl>, `LotArea(sf)` <dbl>, AC <chr>,
     ## #   FirePlace <chr>, Neighborhood <fct>
 
-=======
-# summary(ames)
-```
-
->>>>>>> cc0061af82cf3cc3d75984142e3316d443f7ec4a
 - There are 16 variables. These include Parcel ID, Address, Style,
   Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
   TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
@@ -107,3 +108,28 @@ ggplot(ames, aes(x = `Sale Price`)) + geom_histogram(binwidth = 100000)
   range for housing price.
 
 ## 4. pick a variable that might be related to the main variable.
+
+#### Deo Shaji
+
+``` r
+DeoShajiPlot <- ggplot(ames, 
+                       aes(x = Acres, y = `Sale Price`)) +
+  scale_y_log10() + 
+  scale_x_log10() +
+  geom_jitter()
+  
+DeoShajiPlot
+```
+
+    ## Warning in scale_y_log10(): log-10 transformation introduced infinite values.
+
+    ## Warning in scale_x_log10(): log-10 transformation introduced infinite values.
+
+    ## Warning: Removed 89 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+- The overall pattern is that the the datat has a slight positive
+  correlation. As the square feet of acres increases, sale price also
+  increases. Most of the data is clustered with some outliers.
