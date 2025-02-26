@@ -62,3 +62,19 @@ DeoShajiPlot
 - The overall pattern is that the the datat has a slight positive correlation. As the square feet of acres increases, sale price also increases. Most of the data is clustered with some outliers with high prices or low prices. 
 
 
+#### Megan Mason
+``` {r}
+
+new_df <- dfAmes %>% filter(!is.na(Bedrooms)) %>% select("Bedrooms", "Sale Price")
+
+head(new_df)
+
+ggplot(new_df, aes(x=factor(Bedrooms), y=(`Sale Price`))) +
+  geom_boxplot() +
+  scale_y_continuous(trans = "log", labels = scales::comma) +
+  labs(x="Number of Bedrooms", y="Sale Price")
+
+```
+
+- (Megan's Code) We conclude from the boxplots that the mean sale price slowly increases as number of bedrooms increases.  The distributions and the means are similar and with the exception of outliers, they have a similar shape. However, for houses with one or no bedrooms, the distribution is much wider, with many of the houses with only one bedroom having high sale prices, but houses with no bedrooms have low sale prices. Neither of these groups have any outliers.
+
