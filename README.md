@@ -45,6 +45,28 @@ library(dplyr)
 
 ## 1. inspect the first few lines of the data set:
 
+``` r
+?ames
+```
+
+    ## starting httpd help server ... done
+
+``` r
+names(ames)
+```
+
+    ##  [1] "Parcel ID"             "Address"               "Style"                
+    ##  [4] "Occupancy"             "Sale Date"             "Sale Price"           
+    ##  [7] "Multi Sale"            "YearBuilt"             "Acres"                
+    ## [10] "TotalLivingArea (sf)"  "Bedrooms"              "FinishedBsmtArea (sf)"
+    ## [13] "LotArea(sf)"           "AC"                    "FirePlace"            
+    ## [16] "Neighborhood"
+
+- There are 16 variables. These include Parcel ID, Address, Style,
+  Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
+  TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
+  FirePlace, and Neighborhood.
+
 ## 2. is there a variable of special interest or focus?
 
 ## 3. start the exploration with the main variable:

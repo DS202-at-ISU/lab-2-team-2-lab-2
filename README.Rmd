@@ -26,8 +26,11 @@ library(dplyr)
 ```
 
 ## 1. inspect the first few lines of the data set:
-
-
+```{r}
+?ames
+names(ames)
+```
+- There are 16 variables. These include Parcel ID, Address, Style, Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres, TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC, FirePlace, and Neighborhood.
 
 
 ## 2. is there a variable of special interest or focus?
