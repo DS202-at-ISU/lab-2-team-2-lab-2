@@ -171,8 +171,19 @@ ggplot(new_df, aes(x=factor(Bedrooms), y=(`Sale Price`))) +
 
 \###Sam Bonner
 
-ggplot(ames, aes(x=YearBuilt, y=`Sale Price`)) + geom_point(alpha =
-0.5) + xlim(1900,2030) + scale_y_log10()
+``` r
+ggplot(ames, aes(x=YearBuilt, y=`Sale Price`)) +
+  geom_point(alpha = 0.5) +
+  xlim(1900,2030) +
+  scale_y_log10()
+```
+
+    ## Warning in scale_y_log10(): log-10 transformation introduced infinite values.
+
+    ## Warning: Removed 497 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 - The plot has a slight positive trend, but overall prices seem to be
   steady based on year built. There are multiple outliers, and the
