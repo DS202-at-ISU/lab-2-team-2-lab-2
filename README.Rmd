@@ -29,7 +29,6 @@ library(dplyr)
 ```{r}
 ?ames
 names(ames)
-
 dfAmes <- classdata::ames
 head(dfAmes)
 ```

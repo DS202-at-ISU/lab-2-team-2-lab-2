@@ -56,6 +56,7 @@ names(ames)
     ## [16] "Neighborhood"
 
 ``` r
+<<<<<<< HEAD
 dfAmes <- classdata::ames
 head(dfAmes)
 ```
@@ -74,6 +75,11 @@ head(dfAmes)
     ## #   `FinishedBsmtArea (sf)` <dbl>, `LotArea(sf)` <dbl>, AC <chr>,
     ## #   FirePlace <chr>, Neighborhood <fct>
 
+=======
+# summary(ames)
+```
+
+>>>>>>> cc0061af82cf3cc3d75984142e3316d443f7ec4a
 - There are 16 variables. These include Parcel ID, Address, Style,
   Occupancy, Sale Date, Sale Price, Multi Sale, YearBuilt, Acres,
   TotalLivingArea(sf), Bedrooms, FinishedBsmtArea(sf), LotArea(sf), AC,
