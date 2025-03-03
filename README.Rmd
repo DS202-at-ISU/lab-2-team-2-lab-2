@@ -65,7 +65,7 @@ DeoShajiPlot
 #### Megan Mason
 ``` {r}
 
-new_df <- dfAmes %>% filter(!is.na(Bedrooms)) %>% select("Bedrooms", "Sale Price")
+new_df <- dfAmes %>% filter(!is.na(Bedrooms)) %>% filter(`Sale Price` != 0) %>% select("Bedrooms", "Sale Price")
 
 head(new_df)
 
@@ -74,9 +74,15 @@ ggplot(new_df, aes(x=factor(Bedrooms), y=(`Sale Price`))) +
   scale_y_continuous(trans = "log", labels = scales::comma) +
   labs(x="Number of Bedrooms", y="Sale Price")
 
+summary_df <- new_df %>%
+    group_by(Bedrooms) %>%
+    summarise(Mean_SalePrice = mean(`Sale Price`, na.rm = TRUE))
+
+print(summary_df)
+
 ```
 
-- (Megan's Code) We conclude from the boxplots that the mean sale price slowly increases as number of bedrooms increases.  The distributions and the means are similar and with the exception of outliers, they have a similar shape. However, for houses with one or no bedrooms, the distribution is much wider, with many of the houses with only one bedroom having high sale prices, but houses with no bedrooms have low sale prices. Neither of these groups have any outliers.
+- (Megan's Code) We conclude from the boxplots that the mean sale price is low at no bedrooms, is high at one bedroom, houses with 2-5 bedrooms have similar means lower than one bedroom, and houses with 6-10 bedrooms have similar means that are lower than 2-5 bedrooms. The distributions are similar and with the exception of outliers, they have a similar shape. However, for houses with one or no bedrooms, the distribution is much wider, with many of the houses with only one bedroom having high sale prices, but houses with no bedrooms have low sale prices. Neither of these groups have any outliers.
 
 ###Sam Bonner
 ``` {r}
