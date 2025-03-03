@@ -82,7 +82,7 @@ print(summary_df)
 
 ```
 
-- (Megan's Code) We conclude from the boxplots that the mean sale price is low at no bedrooms, is high at one bedroom, houses with 2-5 bedrooms have similar means lower than one bedroom, and houses with 6-10 bedrooms have similar means that are lower than 2-5 bedrooms. The distributions are similar and with the exception of outliers, they have a similar shape. However, for houses with one or no bedrooms, the distribution is much wider, with many of the houses with only one bedroom having high sale prices, but houses with no bedrooms have low sale prices. Neither of these groups have any outliers.
+- (Megan's Code) We conclude from the boxplots that the mean sale price is low at no bedrooms, is high at one bedroom, houses with 2-5 bedrooms have similar means lower than one bedroom, and houses with 6-10 bedrooms have similar means that are lower than 2-5 bedrooms. The distributions are similar and with the exception of outliers, they have a similar shape. However, for houses with one or no bedrooms, the distribution is much wider, with many of the houses with only one bedroom having high sale prices, but houses with no bedrooms have low sale prices. Neither of these groups have any outliers. 
 
 ###Sam Bonner
 ``` {r}
